@@ -13,7 +13,6 @@ local_css("style.css")
 df = pd.read_csv('Book1.csv')
 col1, col2 = st.columns(2)
 
-
 def invalid_purchase():
     #send data to the model and return value
     model_result = True # it is fraud
@@ -21,8 +20,6 @@ def invalid_purchase():
     new_row = pd.DataFrame({'date':current_time ,'vendor': 'ALDO', 'amout': "$200"},index =[0])
     global df
     df = pd.concat([new_row, df]).reset_index(drop = True)
-    color = (df.vendor == 'ALDO').map({True: 'background-color: yellow', False: ''})
-    df.style.apply(lambda s: color)
 
     return model_result
 
@@ -52,11 +49,21 @@ with col1:
         if btn2:
             fraud_detected = invalid_purchase()
 
+def row_style(row):
+    if row.index == 0:
+        return pd.Series('background-color: red', row.index)
+    # else:
+    #     return pd.Series('', row.index)
+
 with col2: 
     with st.container():
         st.header("FI view")
         st.subheader("John Doe's transaction history")
         if(fraud_detected):
             st.write("Fraud detected!")
-        st.dataframe(df, use_container_width=True)
-        
+        # st.dataframe(df, use_container_width=True)
+            c1 = 'background-color: red'
+            d = {0: c1}
+            st.dataframe(df.style.apply(lambda x: x.index.map(d)),use_container_width=True)
+        else:
+            st.dataframe(df, use_container_width=True)
