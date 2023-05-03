@@ -11,7 +11,11 @@ def invalid_purchase():
     #send data to the model and return value
     model_result = True # it is fraud
     current_time = datetime.datetime.now()
-    new_row = pd.DataFrame({'date':current_time ,'Merchant': 'ALDO', 'amount': "$200"},index =[0])
+    year = current_time.year
+    month = current_time.month
+    day =current_time.day
+    d=str(year)+"-"+str(month)+"-"+str(day)
+    new_row = pd.DataFrame({'date':d ,'Merchant': 'ALDO', 'amount': "$200"},index =[0])
     df = pd.read_csv('in.csv')
     df = pd.concat([new_row, df]).reset_index(drop = True)
     df.to_csv('out.csv', index=False) 
@@ -21,7 +25,11 @@ def valid_purchase():
     #send data to the model and return value
 
     current_time = datetime.datetime.now()
-    new_row = pd.DataFrame({'date':current_time ,'Merchant': "ALDO", 'amount': "$200"},index =[0])
+    year = current_time.year
+    month = current_time.month
+    day =current_time.day
+    d=str(year)+"-"+str(month)+"-"+str(day)
+    new_row = pd.DataFrame({'date':d ,'Merchant': "ALDO", 'amount': "$200"},index =[0])
     df = pd.read_csv('in.csv')
     df = pd.concat([new_row, df]).reset_index(drop = True)
     df.to_csv('out.csv',index=False) 

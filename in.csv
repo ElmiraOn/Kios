@@ -1,9 +1,9 @@
 date,Merchant,amount
-01-May,Candy Store,$20
-28-Apr,rent,"$2,000"
-20-Apr,starbucks,$10.93
-19-Apr,grocery,$100
-15-Apr,power,$40
-10-Apr,Rogers,$100
-05-Apr,Amazon,$50
-01-Apr,walmart,$200
+2023-5-1,Candy Store,$20
+2023-4-28,rent,"$2,000"
+2023-4-20,starbucks,$10.93
+2023-4-19,grocery,$100
+2023-4-15,power,$40
+2023-4-10,Rogers,$100
+2023-4-5,Amazon,$50
+2023-4-1,walmart,$200
