@@ -15,7 +15,7 @@ def invalid_purchase():
     month = current_time.month
     day =current_time.day
     d=str(year)+"-"+str(month)+"-"+str(day)
-    new_row = pd.DataFrame({'date':d ,'Merchant': 'ALDO', 'amount': "$200"},index =[0])
+    new_row = pd.DataFrame({'date':d ,'Merchant': 'ALDO (spoofed)', 'amount': "$200"},index =[0])
     df = pd.read_csv('in.csv')
     df = pd.concat([new_row, df]).reset_index(drop = True)
     df.to_csv('out.csv', index=False) 
