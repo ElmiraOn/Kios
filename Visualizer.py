@@ -36,7 +36,7 @@ def valid_purchase():
 
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title = "Kios",layout="wide")
 local_css("style.css")
 
 a, b = st.columns([1,10])
