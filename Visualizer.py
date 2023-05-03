@@ -15,7 +15,7 @@ def invalid_purchase():
     month = current_time.month
     day =current_time.day
     d=str(year)+"-"+str(month)+"-"+str(day)
-    new_row = pd.DataFrame({'date':d ,'Merchant': 'ALDO (spoofed)', 'amount': "$200"},index =[0])
+    new_row = pd.DataFrame({'date':d ,'Merchant': 'ALDO (spoofed)', 'amount': "$2000"},index =[0])
     df = pd.read_csv('in.csv')
     df = pd.concat([new_row, df]).reset_index(drop = True)
     df.to_csv('out.csv', index=False) 
@@ -39,6 +39,12 @@ def valid_purchase():
 st.set_page_config(layout="wide")
 local_css("style.css")
 
+a, b = st.columns([1,10])
+with a:
+    image = Image.open('log.jpg')
+    st.image(image, width=100 )
+with b:
+    st.title("Kios Fraud Detector")
 
 col1, col2 = st.columns([1,1.5])
 fraud_detected = False
@@ -50,7 +56,8 @@ btn3 = False
 
 with col1:
     with st.container():
-        st.header("valid tranaction")
+        st.header("Customer View")
+        st.subheader("valid transaction")
         image = Image.open('shoes.jpg')
         st.image(image )
         btn1 = st.button("Purchase", key="valid_purch", use_container_width=True)

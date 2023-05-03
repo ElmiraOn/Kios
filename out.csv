@@ -1,5 +1,5 @@
 date,Merchant,amount
-2023-5-3,ALDO,$200
+2023-5-3,ALDO (spoofed),$2000
 2023-5-1,Candy Store,$20
 2023-4-28,rent,"$2,000"
 2023-4-20,starbucks,$10.93
