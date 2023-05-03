@@ -56,7 +56,7 @@ btn3 = False
 
 with col1:
     with st.container():
-        st.header("Customer View")
+        st.header("View: Customer")
         st.subheader("valid transaction")
         image = Image.open('shoes.jpg')
         st.image(image )
@@ -73,7 +73,7 @@ with col1:
 
 with col2:
     with st.container():
-        st.header("Financial Institution view")
+        st.header("View: Business & Financial Institution")
         st.subheader("Account 30407675418785 transaction history")
         c1, c2 = st.columns([1,3])
         with c1:
